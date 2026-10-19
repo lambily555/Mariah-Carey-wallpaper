@@ -1,5 +1,9 @@
 # Mariah Carey wallpaper
 
+**[在线体验 →](https://lambily555.github.io/Mariah-Carey-wallpaper/)**
+
+[![Mariah Carey 香槟金动态壁纸预览](docs/preview.png)](https://lambily555.github.io/Mariah-Carey-wallpaper/)
+
 浅香槟金动态壁纸与独立界面预览，包含人物渐显、金色丝带、蝴蝶扇翅、星光和歌词短句。
 
 ## 使用

@@ -1,0 +1,16 @@
+# Publish only runtime assets and documentation.
+*
+!.gitignore
+!README.md
+!index.html
+!butterflies.js
+!theme-upgrade.css
+!theme-upgrade.js
+!reference-visual.css
+!reference-visual.js
+!portrait.png
+!gold-butterfly.png
+!butterfly-frames/
+butterfly-frames/*
+!butterfly-frames/sheet00.webp
+!butterfly-frames/sheet01.webp

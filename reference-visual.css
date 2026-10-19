@@ -1,0 +1,114 @@
+/* Reference composition, retaining the original pale champagne palette. */
+.ribbons{display:none}
+.reference-ribbons{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;overflow:hidden;opacity:0;animation:nameIn 6s .7s ease both}
+.reference-ribbons.front{z-index:2}
+.reference-thread{fill:none;stroke:url(#threadGold);stroke-width:1.25;opacity:.94}
+.reference-thread.soft{stroke-width:8;opacity:.30;filter:url(#threadBlur)}
+.reference-thread.hairline{stroke-width:.7;opacity:.74}
+.reference-traveller{fill:none;stroke:#fff8dc;stroke-width:1.5;stroke-dasharray:5 96;stroke-linecap:round;filter:url(#threadGlow);animation:referenceTravel 22s linear infinite;opacity:.9}
+@keyframes referenceTravel{to{stroke-dashoffset:-202}}
+.rim-light{filter:drop-shadow(0 0 1.5px #fff8dc) drop-shadow(0 0 5px #f2bd67) drop-shadow(0 0 13px #f3cf86);opacity:0;animation:rimAppear 6s .7s cubic-bezier(.4,0,.6,1) both}
+@keyframes rimAppear{from{opacity:0}to{opacity:.83}}
+.rear-butterfly{display:none}
+.reference-butterfly{position:absolute;right:-2%;top:18%;width:24%;height:37%;object-fit:contain;pointer-events:none;z-index:0;opacity:0;filter:drop-shadow(0 0 6px #fff1b680);transform:rotate(8deg);animation:butterflyAppear 7s .7s ease both}
+@keyframes butterflyAppear{from{opacity:0}to{opacity:.34}}
+.accent-stars{display:none}
+.reference-stars{position:absolute;inset:0;pointer-events:none;z-index:3}
+.reference-star{position:absolute;width:3px;height:3px;border-radius:50%;background:#fff9dd;box-shadow:0 0 6px 2px #ffe9ab80;animation:referenceTwinkle 7s ease-in-out infinite;opacity:.25}
+.reference-star.large:before,.reference-star.large:after{content:'';position:absolute;inset:-8px 1px;background:linear-gradient(transparent,#fff9df,transparent);border-radius:100%}
+.reference-star.large:after{transform:rotate(90deg)}
+@keyframes referenceTwinkle{0%,100%{opacity:.12;transform:scale(.7)}45%{opacity:.3}65%{opacity:.9;transform:scale(1.1)}}
+.reference-notes{position:absolute;inset:0;pointer-events:none;z-index:0;color:#cda363;opacity:.38}
+.reference-notes span{position:absolute;font-family:Georgia,serif;font-size:42px;transform:rotate(12deg)}
+.stage .artist-name{left:3%;top:17%;width:59%;z-index:3}
+.stage .artist-name text{stroke:#a97436;stroke-width:.9;filter:url(#satinRelief)}
+.stage .artist-name text:nth-of-type(2){font-size:228px}
+.stage .name-lights{opacity:.6}
+.bg-words.upper{left:53%;top:5%;max-width:18%;font-size:clamp(22px,2.65vw,40px);opacity:.43;line-height:1.5;color:#986d39}
+.bg-words.upper span{line-height:1.5}
+.bg-words.lower{top:66%;opacity:.22;color:#986d39}
+.lyrics-panel{left:25%;width:34%;bottom:26%;color:#513621}
+.lyric-line{font-size:clamp(19px,2.15vw,32px);text-overflow:clip}
+.lyric-next{color:#b18b4e;opacity:.65}
+@media(max-width:1100px){.stage .artist-name{left:0;top:20%;width:61%}.reference-butterfly{right:-4%;top:20%;width:27%}.bg-words.upper{left:52%;top:8%;font-size:27px;max-width:20%}.lyrics-panel{left:23%;width:36%;bottom:28%}}
+@media(max-width:700px){.stage .artist-name{left:-5%;top:17%;width:72%}.reference-butterfly,.bg-words.upper{display:none}.lyrics-panel{left:5%;width:58%;bottom:28%}.reference-notes{display:none}.reference-stars{opacity:.5}.lyric-line{font-size:17px}}
+@media(prefers-reduced-motion:reduce){.reference-traveller,.reference-star{animation:none}.reference-ribbons,.reference-butterfly,.rim-light{animation:none;opacity:.5}}
+.stage .photo,.stage .outline,.stage .rim-light{z-index:1}.stage .shell{z-index:1}.reference-ribbons.front{clip-path:polygon(64% 0,100% 0,100% 100%,0 100%,0 95%,64% 95%)}.reference-butterfly{right:-4%;top:19%;width:23%;opacity:.36}.lyrics-panel{width:35%}
+.reference-butterfly{filter:blur(.25px) drop-shadow(0 0 9px #fff0bc80);mask-image:radial-gradient(ellipse,#000 45%,#000b 70%,transparent 99%)}
+.stage{background:radial-gradient(ellipse at 76% 25%,#fff8e89c,transparent 53%),radial-gradient(ellipse at 32% 69%,#ede3cc4d,transparent 50%),linear-gradient(115deg,var(--left,#c8b79a),var(--mid,#e3d0aa) 48%,var(--right,#f4e8c9))}
+.lyric-window{mask-image:linear-gradient(transparent,#000 3%,#000 97%,transparent)}
+
+
+/* Brighter ribbon cores and localized bloom, without washing out the portrait. */
+.reference-thread{stroke-width:1.8;filter:drop-shadow(0 0 2px #fff4d9)}
+.reference-thread.soft{stroke:#e2d2a5;stroke-width:17;opacity:.48;filter:url(#threadBlur)}
+.reference-thread.hairline{stroke-width:.85;opacity:.9}
+.reference-traveller{stroke-width:2.1;stroke-dasharray:8 93;opacity:1}
+.ribbon-dust{fill:#fff2c3;filter:drop-shadow(0 0 2px #e8d8af);animation:ribbonShimmer 5s ease-in-out infinite}
+.ribbon-glint{fill:#fffce8;filter:drop-shadow(0 0 4px #fff1ca);animation:ribbonShimmer 6s ease-in-out infinite}
+@keyframes ribbonShimmer{0%,100%{opacity:.22}48%{opacity:.95}72%{opacity:.5}}
+.rim-light{filter:drop-shadow(0 0 2px #fffbe5) drop-shadow(0 0 6px #fff5df) drop-shadow(0 0 16px #e3d1a2) drop-shadow(0 0 28px #eee2c3);mask-image:linear-gradient(#000 0%,#000 57%,#0007 73%,transparent 94%)}
+@keyframes rimAppear{from{opacity:0}to{opacity:1}}
+.reference-star{box-shadow:0 0 4px 1px #fff8dc,0 0 13px 4px #eee0b975}
+.reference-star.large:before,.reference-star.large:after{inset:-12px 1px}
+@keyframes referenceTwinkle{0%,100%{opacity:.3;transform:scale(.8)}45%{opacity:.65}65%{opacity:1;transform:scale(1.15)}}
+.reference-butterfly{filter:drop-shadow(0 0 10px #fff2d499);opacity:.5}
+@keyframes butterflyAppear{from{opacity:0}to{opacity:.5}}
+@media(prefers-reduced-motion:reduce){.ribbon-dust,.ribbon-glint{animation:none;opacity:.6}}
+
+.reference-ribbons.front{clip-path:none;mask-image:linear-gradient(90deg,transparent 61%,#000 70%),linear-gradient(0deg,#000 0%,transparent 9%)}
+.reference-thread.soft{stroke-width:11;opacity:.32}
+.reference-thread:not(.soft):not(.hairline){stroke:#fffbed;stroke-width:1.35}
+
+/* A defined satin fold conceals the lower photo edge. */
+.portrait-base-veil{position:absolute;right:0;bottom:0;width:47%;height:23%;z-index:2;pointer-events:none;opacity:0;animation:baseVeilIn 6s .7s cubic-bezier(.4,0,.6,1) both}
+.portrait-base-veil img{display:block;width:100%;height:100%;object-fit:fill}
+.stage .photo{mask-image:none}
+@keyframes baseVeilIn{from{opacity:0}to{opacity:1}}
+@media(prefers-reduced-motion:reduce){.portrait-base-veil{animation:none;opacity:1}}
+.portrait-base-veil{mask-image:linear-gradient(90deg,transparent,#000 19%);width:43%}
+
+.portrait-base-veil{height:17%}
+.portrait-base-veil svg{display:block;width:100%;height:100%}
+.silk-light-band{opacity:.72;filter:drop-shadow(0 0 4px #f5e6bf88)}
+.silk-light-ridge{fill:none;stroke:#fffbed;stroke-width:1.1;opacity:.95;filter:drop-shadow(0 0 3px #fff2d0)}
+.reference-thread.hairline{opacity:.4;stroke-width:.55}
+
+/* Granular champagne-gold trails replace smooth fabric bands. */
+.reference-thread,.reference-traveller{display:none}
+.reference-thread.soft{display:block;stroke:#e5d09c;stroke-width:5;opacity:.19}
+.gold-grain{opacity:.9;animation:grainGlow 7s ease-in-out infinite}
+@keyframes grainGlow{0%,100%{opacity:.68}50%{opacity:1}}
+@media(prefers-reduced-motion:reduce){.gold-grain{animation:none}}
+
+.reference-thread.soft{stroke:#f2e3ba;stroke-width:2.6;opacity:.95;filter:url(#threadGlow)}
+
+.portrait-base-veil{display:none}
+.translucent-sheet{opacity:.68}
+.translucent-ridge{fill:none;stroke:#fff7df;stroke-width:1.25;opacity:.92;filter:drop-shadow(0 0 2px #efdcad)}
+.reference-thread.soft{stroke-width:2;opacity:.6}
+.gold-grain{opacity:.6}
+.stage .photo{mask-image:linear-gradient(#000 0%,#000 95%,transparent 100%)}
+
+/* Restrained front arcs with gold body and localized luminous cores. */
+.translucent-sheet{opacity:.86}
+.translucent-ridge{stroke:#ffefbd;stroke-width:1.65;opacity:.96;filter:drop-shadow(0 0 2px #e0ba68) drop-shadow(0 0 5px #f6d28c)}
+.reference-thread.soft{stroke:#d9b66f;stroke-width:5;opacity:.48;filter:url(#threadGlow)}
+.reference-ribbons.front{mask-image:linear-gradient(90deg,transparent 62%,#000 73%)}
+
+/* Slow orbital drift: foreground and rear ribbons pass at different phases. */
+.reference-ribbons{transform-origin:81% 68%;animation:nameIn 6s .7s ease both,ribbonOrbit 32s .7s linear infinite;will-change:transform}
+.reference-ribbons.front{animation:nameIn 6s .7s ease both,ribbonOrbitFront 36s .7s linear infinite;transform-origin:82% 83%}
+@keyframes ribbonOrbit{
+  0%,100%{transform:translate(0,0) rotate(-.6deg) scale(1)}
+  25%{transform:translate(10px,-9px) rotate(.3deg) scale(1.015)}
+  50%{transform:translate(0,-15px) rotate(.9deg) scale(1.025)}
+  75%{transform:translate(-10px,-7px) rotate(.1deg) scale(1.012)}
+}
+@keyframes ribbonOrbitFront{
+  0%,100%{transform:translate(0,-7px) rotate(.6deg) scale(1.014)}
+  25%{transform:translate(-12px,0) rotate(-.2deg) scale(1)}
+  50%{transform:translate(0,9px) rotate(-.8deg) scale(.99)}
+  75%{transform:translate(12px,0) rotate(.1deg) scale(1.004)}
+}
+@media(prefers-reduced-motion:reduce){.reference-ribbons,.reference-ribbons.front{animation:none;transform:none;will-change:auto;opacity:1}}

@@ -136,22 +136,4 @@
 .rim-accent-flood{flood-color:var(--effect-light,#fff0c8)}
 
 /* An asymmetric twilight composition: jewel colors collect at distinct focal points. */
-.stage[data-accent="prism"]{--effect-color:#a98daf;--effect-light:#cfdeea;--effect-glow:#bdb0cd55;--effect-haze:#a89bbb17;background:radial-gradient(ellipse 57% 68% at 9% 24%,#8f80aa80,transparent 100%),radial-gradient(ellipse 48% 59% at 39% 68%,#c28eaa5c,transparent 100%),radial-gradient(ellipse 51% 53% at 17% 94%,#8caec35c,transparent 100%),radial-gradient(ellipse 43% 64% at 85% 54%,#dcc3bf66,transparent 100%),radial-gradient(ellipse 56% 49% at 72% 8%,#b5c8d150,transparent 100%),radial-gradient(ellipse 51% 58% at 92% 96%,#c1c3d666,transparent 100%),linear-gradient(120deg,#b3a5ba 0%,#c9b8c1 30%,#dfd2c5 61%,#efe3cb 100%)}
-.stage[data-accent="prism"] .sidebar{background:linear-gradient(90deg,#65506b16,transparent);border-right-color:transparent}
-.stage[data-accent="prism"] .composer{background:linear-gradient(105deg,#806c8440,#8093a132 66%,#b9a58c32);border-color:#eee0c54a}
-.stage[data-accent="prism"] .beam{background:conic-gradient(from 155deg at 75% 0%,transparent 0deg,#d1bde41c 12deg,transparent 26deg,#eac4ad23 37deg,transparent 50deg)}
-.stage[data-accent="prism"] .lyric-line:not(.lyric-next){color:#493044}
-.stage[data-accent="prism"] .lyric-next{color:#8b664b}
-.stage[data-accent="prism"] .bg-words.lower{color:#f3dfec;opacity:.4}
-.stage[data-accent="prism"] #translucent-0-1 stop:nth-child(2){stop-color:#bb7f9c}
-.stage[data-accent="prism"] #translucent-0-1 stop:nth-child(4){stop-color:#aca3db}
-.stage[data-accent="prism"] #translucent-1-1 stop:nth-child(2){stop-color:#7aafc9}
-.stage[data-accent="prism"] #translucent-1-1 stop:nth-child(4){stop-color:#d9bddb}
-.stage[data-accent="prism"] .accent-trail-gradient stop:nth-child(2){stop-color:#dcb8cd}
-.stage[data-accent="prism"] .accent-trail-gradient stop:nth-child(4){stop-color:#77a9c5}
-.stage[data-accent="prism"] .reference-ribbons:not(.front) .accent-grain{fill:#b982a6}
-.stage[data-accent="prism"] .reference-ribbons.front .accent-grain{fill:#80b4cf}
-.stage[data-accent="prism"] .reference-star:nth-child(4n){background:#e4bfd8;box-shadow:0 0 8px #dca7cf88}
-.stage[data-accent="prism"] .reference-star:nth-child(4n+1){background:#b5daeb;box-shadow:0 0 8px #9fcbe088}
-.stage[data-accent="prism"] #champagneInk stop:nth-child(3){stop-color:#e4c7dc}
-.stage[data-accent="prism"] #champagneInk stop:nth-child(8){stop-color:#d9e2da}
+.stage[data-accent="champagne"]{--effect-color:#d5b676;--effect-light:#fff0c8;--effect-glow:#f1d69955;--effect-haze:#f3db9c20}

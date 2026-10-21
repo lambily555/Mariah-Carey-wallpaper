@@ -12,7 +12,22 @@ const stage=document.querySelector('#stage'),canvas=document.querySelector('#dus
 </style>
 <div class="palette" aria-label="背景配色"></div>
 <script>
-const themes=[['浅香槟','#c8b79a','#e3d0aa','#f4e8c9','champagne'],['香槟 × 深酒红','#65283d','#b58c89','#f1e5cb','wine'],['香槟 × 烟紫','#67516f','#b4a0ba','#f1e5cb','violet'],['香槟 × 午夜蓝','#22354e','#8eabb5','#f1e5cb','blue']];for(const [i,t] of themes.entries()){const btn=document.createElement('button');btn.style.background=t[1];btn.title=t[0];btn.setAttribute('aria-label',t[0]);btn.setAttribute('aria-pressed',i===0?'true':'false');btn.onclick=()=>{document.querySelector('.stage').dataset.accent=t[4];['--left','--mid','--right'].forEach((v,n)=>document.documentElement.style.setProperty(v,t[n+1]));document.querySelectorAll('.palette button').forEach(b=>b.setAttribute('aria-pressed',String(b===btn)))};document.querySelector('.palette').append(btn)}document.querySelector('.palette button:first-child').click();
+const themes=[['浅香槟','#c8b79a','#e3d0aa','#f4e8c9','champagne'],['香槟 × 深酒红','#65283d','#b58c89','#f1e5cb','wine'],['香槟 × 烟紫','#67516f','#b4a0ba','#f1e5cb','violet'],['香槟 × 午夜蓝','#22354e','#8eabb5','#f1e5cb','blue'],['暮光撞色','#d7bb94','#f3dfbb','#efdab9','prism'],['孔雀青金','#376b69','#c8cfb4','#f2e3c5','teal'],['橄榄金','#77764c','#d1c39b','#f2e2be','olive'],['勃艮第红','#79424b','#d0afa0','#f4e0be','burgundy'],['珍珠蓝金','#718ca9','#c7d7df','#f3e5cd','pearl'],['青碧 · 玫瑰金','#417e78','#c58d7d','#f4dfb9','mix-jade'],['莓红 · 月光蓝','#945967','#7e9fba','#f3dfbf','mix-berry'],['琥珀 · 靛青','#bc8754','#596d9c','#f5e1bb','mix-amber']];
+const palette=document.querySelector('.palette'),extra=document.createElement('div'),more=document.createElement('button');
+extra.id='palette-extra';extra.className='palette-extra';extra.hidden=true;
+more.className='palette-more';more.textContent='···';more.title='更多配色';more.setAttribute('aria-label','更多配色');more.setAttribute('aria-expanded','false');more.setAttribute('aria-controls',extra.id);
+function closePalette(){extra.hidden=true;more.setAttribute('aria-expanded','false')}
+for(const [i,t] of themes.entries()){
+ const btn=document.createElement('button'),mixed=t[4]==='prism'||t[4].startsWith('mix-');
+ btn.className='palette-choice';btn.style.background=mixed?`conic-gradient(${t[1]},${t[3]},${t[2]},${t[3]},${t[1]})`:t[1];btn.title=t[0];btn.setAttribute('aria-label',t[0]);btn.setAttribute('aria-pressed','false');
+ if(i>=5){btn.textContent=t[0];btn.style.setProperty('--swatch',btn.style.background);btn.style.background=''}
+ btn.onclick=()=>{stage.dataset.accent=t[4];['--left','--mid','--right'].forEach((v,n)=>document.documentElement.style.setProperty(v,t[n+1]));palette.querySelectorAll('.palette-choice').forEach(b=>b.setAttribute('aria-pressed',String(b===btn)));closePalette();if(i>=5)more.focus()};
+ (i<5?palette:extra).append(btn);
+}
+more.onclick=()=>{extra.hidden=!extra.hidden;more.setAttribute('aria-expanded',String(!extra.hidden))};palette.append(more,extra);
+document.addEventListener('pointerdown',e=>{if(!palette.contains(e.target))closePalette()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!extra.hidden){closePalette();more.focus()}});
+palette.querySelector('.palette-choice').click();
 </script><style>
 /* Keep the photo filter constant: the previous bright filter changed at the end of the reveal. */
 .photo{animation:softPortrait 6s .7s cubic-bezier(.4,0,.6,1) both;will-change:opacity;filter:drop-shadow(0 18px 38px #3b201e44)}
@@ -57,7 +72,7 @@ function paintNameLight(time){nc.clearRect(0,0,nw,nh);const r=signature.getBound
 .stage[data-accent="blue"] .lyric-next{color:#ffecb8}
 .stage[data-accent="blue"] .lyrics-top{color:#fff1d3}
 .stage[data-accent="blue"] .bg-words.lower,.stage[data-accent="violet"] .bg-words.lower{color:#fff1d3;opacity:.4}
-</style><link rel="stylesheet" href="theme-upgrade.css?v=1"><script src="theme-upgrade.js?v=2"></script><link rel="stylesheet" href="reference-visual.css?v=21"><script src="reference-visual.js?v=14"></script></html>
+</style><link rel="stylesheet" href="theme-upgrade.css?v=1"><script src="theme-upgrade.js?v=2"></script><link rel="stylesheet" href="reference-visual.css?v=26"><script src="reference-visual.js?v=14"></script></html>
 
 
 

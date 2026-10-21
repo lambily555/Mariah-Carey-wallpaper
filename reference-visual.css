@@ -137,3 +137,46 @@
 
 /* An asymmetric twilight composition: jewel colors collect at distinct focal points. */
 .stage[data-accent="champagne"]{--effect-color:#d5b676;--effect-light:#fff0c8;--effect-glow:#f1d69955;--effect-haze:#f3db9c20}
+.stage[data-accent="prism"]{--effect-color:#b38b75;--effect-light:#f6dfb5;--effect-glow:#e7c48255;--effect-haze:#d6ad8717;background:radial-gradient(ellipse 66% 78% at 3% 10%,#426f9694 0%,#426f9645 44%,#426f9600 100%),radial-gradient(ellipse 64% 76% at 99% 92%,#426f968a 0%,#426f963b 44%,#426f9600 100%),radial-gradient(ellipse 64% 72% at 10% 94%,#b56c5e80 0%,#b56c5e38 46%,#b56c5e00 100%),radial-gradient(ellipse 64% 72% at 94% 3%,#b56c5e78 0%,#b56c5e33 46%,#b56c5e00 100%),radial-gradient(ellipse 70% 90% at 57% 46%,#fff0cba6 0%,#fff0cb45 50%,#fff0cb00 100%),linear-gradient(115deg,#eed9b9,#f3dfbb 52%,#efdab9)}
+.stage[data-accent="prism"] .sidebar{background:transparent;border-right-color:transparent}
+.stage[data-accent="prism"] .composer{background:linear-gradient(105deg,#82684c38,#b59a7333 66%,#b9a58c32);border-color:#eee0c54a}
+.stage[data-accent="prism"] .beam{background:radial-gradient(ellipse at 65% 35%,#fff0dc18,#fff0dc00 70%)}
+.stage[data-accent="prism"] .lyric-line:not(.lyric-next){color:#453d32}
+.stage[data-accent="prism"] .lyric-next{color:#8b664b}
+.stage[data-accent="prism"] .bg-words.lower{color:#f3e5ce;opacity:.4}
+.stage[data-accent="prism"] #translucent-0-1 stop:nth-child(2){stop-color:#b57960}
+.stage[data-accent="prism"] #translucent-0-1 stop:nth-child(4){stop-color:#e5d0a8}
+.stage[data-accent="prism"] #translucent-1-1 stop:nth-child(2){stop-color:#739cb5}
+.stage[data-accent="prism"] #translucent-1-1 stop:nth-child(4){stop-color:#ead6ae}
+.stage[data-accent="prism"] .accent-trail-gradient stop:nth-child(2){stop-color:#eddbb4}
+.stage[data-accent="prism"] .accent-trail-gradient stop:nth-child(4){stop-color:#94b4c5}
+.stage[data-accent="prism"] .reference-ribbons:not(.front) .accent-grain{fill:#bca184}
+.stage[data-accent="prism"] .reference-ribbons.front .accent-grain{fill:#c4c9b9}
+.stage[data-accent="prism"] .reference-star:nth-child(4n){background:#f0dcb2;box-shadow:0 0 8px #e4c78d88}
+.stage[data-accent="prism"] .reference-star:nth-child(4n+1){background:#ccd4cc;box-shadow:0 0 8px #afbec488}
+.stage[data-accent="prism"] #champagneInk stop:nth-child(3){stop-color:#e4cc9d}
+.stage[data-accent="prism"] #champagneInk stop:nth-child(8){stop-color:#eee0bc}
+
+/* Local palette studies; the portrait keeps its original warm lighting. */
+.stage[data-accent="teal"]{--effect-color:#63958a;--effect-light:#e5e7bf;--effect-glow:#8cbb9e55;--effect-haze:#709d8617}
+.stage[data-accent="olive"]{--effect-color:#ac965a;--effect-light:#f2e4b5;--effect-glow:#c1ac6755;--effect-haze:#b7a06b17}
+.stage[data-accent="burgundy"]{--effect-color:#ba827e;--effect-light:#f4d5b8;--effect-glow:#d4a08a55;--effect-haze:#b87b7117}
+.stage[data-accent="pearl"]{--effect-color:#95b2c8;--effect-light:#f1ecd9;--effect-glow:#afcad755;--effect-haze:#9dbccc17}
+.stage:is([data-accent="teal"],[data-accent="olive"],[data-accent="burgundy"],[data-accent="pearl"]){background:radial-gradient(ellipse 75% 100% at 73% 30%,#fff0d3b3 0%,#fff0d333 50%,#fff0d300 100%),radial-gradient(ellipse 80% 90% at 98% 110%,var(--left) 0%,transparent 78%),linear-gradient(115deg,var(--left),var(--mid) 48%,var(--right))}
+.stage:is([data-accent="teal"],[data-accent="olive"],[data-accent="burgundy"],[data-accent="pearl"]) .sidebar{background:transparent;border-right-color:transparent}
+
+.palette .palette-more{background:transparent;color:#775d40;box-shadow:none;font-size:18px;line-height:14px}
+.palette-extra{position:absolute;right:0;top:calc(100% + 10px);width:288px;max-width:calc(100vw - 32px);padding:12px;display:grid;grid-template-columns:1fr 1fr;gap:8px;background:#f5ebdceF;border:1px solid #c9ae7970;border-radius:16px;box-shadow:0 10px 32px #45362a25;backdrop-filter:blur(16px)}
+.palette-extra[hidden]{display:none}
+.palette-extra .palette-choice{width:auto;height:38px;border-radius:9px;border:1px solid transparent;box-shadow:none;color:#594834;font-size:12px;display:flex;align-items:center;gap:8px;padding:5px 8px;background:transparent}
+.palette-extra .palette-choice:before{content:'';width:18px;height:18px;flex-shrink:0;border-radius:50%;background:var(--swatch);box-shadow:0 0 0 1px #795c4933}
+.palette-extra .palette-choice:hover{background:#e9d9bf66}
+.palette-extra .palette-choice[aria-pressed=true]{outline:none;border-color:#a68a59;background:#eadac377}
+.stage[data-accent^="mix-"]{--effect-color:var(--left);--effect-light:#f5e0bc;--effect-glow:#dcc39355;--effect-haze:#d6ad8717;background:radial-gradient(ellipse 72% 85% at 0% 5%,color-mix(in srgb,var(--left) 65%,transparent),transparent 100%),radial-gradient(ellipse 68% 80% at 100% 95%,color-mix(in srgb,var(--left) 58%,transparent),transparent 100%),radial-gradient(ellipse 68% 80% at 0% 100%,color-mix(in srgb,var(--mid) 65%,transparent),transparent 100%),radial-gradient(ellipse 72% 85% at 100% 0%,color-mix(in srgb,var(--mid) 58%,transparent),transparent 100%),radial-gradient(ellipse at 65% 35%,#fff2d5aa,transparent 70%),linear-gradient(115deg,#eddbbf,var(--right))}
+.stage[data-accent^="mix-"] .sidebar{background:transparent;border-right-color:transparent}
+.stage[data-accent^="mix-"] .composer{background:#8b775239}
+.stage[data-accent^="mix-"] .accent-trail-gradient stop:nth-child(2){stop-color:var(--mid)}
+.stage[data-accent^="mix-"] .accent-trail-gradient stop:nth-child(4){stop-color:var(--left)}
+
+/* Keep the head at its existing height and carry the cropped hem below the viewport. */
+@media(min-width:851px){.stage .portrait{height:100vh;width:65.23vh;bottom:-3.5vh}.stage .photo{mask-image:none}}

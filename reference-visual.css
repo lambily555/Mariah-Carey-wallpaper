@@ -180,3 +180,45 @@
 
 /* Keep the head at its existing height and carry the cropped hem below the viewport. */
 @media(min-width:851px){.stage .portrait{height:100vh;width:65.23vh;bottom:-3.5vh}.stage .photo{mask-image:none}}
+
+/* Fine luminous strands and airy wings, matching the reference's layered light. */
+.reference-thread.hairline{display:block;stroke-width:.65;opacity:.64;filter:url(#threadGlow)}
+.reference-traveller{display:block;stroke:#fffbea;stroke-width:1.3;stroke-dasharray:1.2 29 2 67;opacity:.85}
+.translucent-sheet{opacity:.25}
+.stage[data-accent] .translucent-ridge{stroke-width:1.05;filter:drop-shadow(0 0 2px #fff8d2) drop-shadow(0 0 5px #e7c77b)}
+.reference-ribbons.front{clip-path:none;mask-image:linear-gradient(90deg,#0005,#000 30%)}
+.reference-star{box-shadow:0 0 5px 1px #fff5cd,0 0 13px 3px #efc98480}
+.reference-star.large{width:4px;height:4px}
+.reference-star.large:before,.reference-star.large:after{inset:-11px 1.5px}
+@keyframes referenceTwinkle{0%,100%{opacity:.28;transform:scale(.75)}42%{opacity:.55}62%{opacity:1;transform:scale(1.15)}80%{opacity:.5}}
+.stage .artist-name text{stroke:#e9c781;stroke-width:.55}
+.stage[data-accent] .reference-butterfly{mix-blend-mode:normal;filter:brightness(1.35) saturate(.55) drop-shadow(0 0 3px #fff2bd);transform-origin:65% 60%;animation:butterflyAppear 7s .7s ease both,wingFloat 9s ease-in-out infinite}
+@keyframes butterflyAppear{from{opacity:0}to{opacity:.3}}
+@keyframes wingFloat{0%,100%{transform:rotate(8deg) scaleX(.95) translateY(0)}50%{transform:rotate(5deg) scaleX(1) translateY(-7px)}}
+@media(prefers-reduced-motion:reduce){.reference-traveller,.stage[data-accent] .reference-butterfly{animation:none}.stage[data-accent] .reference-butterfly{opacity:.3}}
+
+/* Cache the ribbon artwork; animate whole layers instead of repainting every path. */
+.reference-thread.hairline{filter:none}
+.reference-traveller,.gold-grain,.reference-ribbons circle{animation:none!important}
+.reference-ribbons{contain:layout style;backface-visibility:hidden}
+.stage[data-accent] .translucent-ridge{filter:none}
+
+.strand-highlight{fill:none;stroke:#fff9dc;stroke-width:1.25;stroke-linecap:round}
+.reference-thread.hairline{stroke-width:.75}
+
+/* The main trail has a soft gold body surrounding a narrow ivory light core. */
+.luminous-body{pointer-events:none}
+.reference-ribbons.front .luminous-body{opacity:.95}
+.stage[data-accent] .reference-thread.soft{opacity:.2}
+.strand-highlight{stroke-width:1.05}
+
+.flow-study .reference-ribbons{display:none}
+.golden-flow-study{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;overflow:hidden;isolation:isolate}
+.flow-star{animation:flowStar 11s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+@keyframes flowStar{0%,100%{opacity:.3}50%{opacity:1}}
+@media(prefers-reduced-motion:reduce){.flow-moving{display:none}.flow-star{animation:none;opacity:.7}}
+
+.golden-flow-front{z-index:2;mask-image:linear-gradient(90deg,transparent 62%,#000 73%)}
+
+/* Preserve pale champagne while separating the ground from the ivory light cores. */
+.stage[data-accent="champagne"]{background:radial-gradient(ellipse at 76% 25%,#fff3d74d,transparent 53%),radial-gradient(ellipse at 32% 69%,#dac6a326,transparent 50%),linear-gradient(115deg,#b8a78d,#d5bf97 48%,#e5d3b0)}

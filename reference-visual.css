@@ -218,7 +218,10 @@
 @keyframes flowStar{0%,100%{opacity:.3}50%{opacity:1}}
 @media(prefers-reduced-motion:reduce){.flow-moving{display:none}.flow-star{animation:none;opacity:.7}}
 
-.golden-flow-front{z-index:2;mask-image:linear-gradient(90deg,transparent 62%,#000 73%)}
+.golden-flow-front{z-index:0}
 
 /* Preserve pale champagne while separating the ground from the ivory light cores. */
 .stage[data-accent="champagne"]{background:radial-gradient(ellipse at 76% 25%,#fff3d74d,transparent 53%),radial-gradient(ellipse at 32% 69%,#dac6a326,transparent 50%),linear-gradient(115deg,#b8a78d,#d5bf97 48%,#e5d3b0)}
+
+/* Keep the signature clear of the song title on desktop. */
+@media(min-width:701px){.stage .artist-name{translate:0 -38px}}
